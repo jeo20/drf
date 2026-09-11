@@ -17,9 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from posts.views import HelloWorld
+from posts.api.views import PostApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HelloWorld.as_view(), name='hello'),
+    path('api/posts/', PostApiView.as_view(), name='post-list')
 ]
