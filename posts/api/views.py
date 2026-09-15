@@ -10,7 +10,7 @@ class PostViewSet(ViewSet):
     def list(self, request):
         serializer = PostSerializer(Post.objects.all(), many=True)
         return Response(status=status.HTTP_200_OK, data=serializer.data)
-    
+
     def retrieve(self, request, pk: int):
         serializer = PostSerializer(Post.objects.filter(pk=pk), many=True)
         return Response(status=status.HTTP_200_OK, data=serializer.data)
