@@ -2,7 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from posts.api.serialisers import PostSerializer
+from posts.api.serializers import PostSerializer
 from posts.models import Post
 
 
