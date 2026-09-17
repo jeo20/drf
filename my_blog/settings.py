@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_yasg",
     "posts",
-    "api_externa"
+    "api_externa",
+    "clima",
+    "usuarios_api"
 ]
 
 MIDDLEWARE = [

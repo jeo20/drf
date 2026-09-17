@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Consulta del clima</title>
+</head>
+
+<body>
+
+    <h1>Consulta del clima</h1>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <div>
+            <label for="latitude">
+                Latitud
+            </label>
+
+            <input
+                type="text"
+                id="latitude"
+                name="latitude"
+                value="-51.6230"
+                required
+            >
+        </div>
+
+        <div>
+            <label for="longitude">
+                Longitud
+            </label>
+
+            <input
+                type="text"
+                id="longitude"
+                name="longitude"
+                value="-69.2160"
+                required
+            >
+        </div>
+
+        <button type="submit">
+            Consultar
+        </button>
+
+    </form>
+
+    {% if error %}
+
+        <p>
+            {{ error }}
+        </p>
+
+    {% endif %}
+
+    {% if clima %}
+
+        <h2>Clima actual</h2>
+
+        <p>
+            Temperatura:
+            {{ clima.temperature_2m }}
+            °C
+        </p>
+
+        <p>
+            Humedad:
+            {{ clima.relative_humidity_2m }}
+            %
+        </p>
+
+        <p>
+            Viento:
+            {{ clima.wind_speed_10m }}
+            km/h
+        </p>
+
+    {% endif %}
+
+</body>
+</html>
