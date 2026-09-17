@@ -118,6 +118,7 @@ SIMPLE_JWT = {
 }
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/6.1/topics/i18n/
 
