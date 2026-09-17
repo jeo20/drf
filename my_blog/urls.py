@@ -41,6 +41,7 @@ urlpatterns = [
     path('api/',  include(router_post.urls)),
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redocs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    path('api/', include('user.api.router')),
     path("api_externa/usuarios/", usuarios, name="usuarios"),
     path("clima/", clima, name="clima"),
     path("usuarios_api/enviar/", crear_usuario, name="enviar_usuario"),
