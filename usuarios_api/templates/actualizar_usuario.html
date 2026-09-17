@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actualizar usuario</title>
+</head>
+
+<body>
+
+    <h1>Actualizar usuario</h1>
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <div>
+            <label for="usuario_id">
+                ID del usuario
+            </label>
+
+            <input
+                type="number"
+                id="usuario_id"
+                name="usuario_id"
+                value="1"
+                required
+            >
+        </div>
+
+        <br>
+
+        <div>
+            <label for="nombre">
+                Nombre
+            </label>
+
+            <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                value="Jorge Orellana"
+                required
+            >
+        </div>
+
+        <br>
+
+        <div>
+            <label for="username">
+                Usuario
+            </label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                value="jorge"
+                required
+            >
+        </div>
+
+        <br>
+
+        <div>
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                value="jorge@test.com"
+                required
+            >
+        </div>
+
+        <br>
+
+        <button
+            type="submit"
+            name="operacion"
+            value="put"
+        >
+            Actualizar con PUT
+        </button>
+
+        <button
+            type="submit"
+            name="operacion"
+            value="patch"
+        >
+            Actualizar con PATCH
+        </button>
+
+    </form>
+
+    {% if error %}
+
+        <h2>Error</h2>
+
+        <p>
+            {{ error }}
+        </p>
+
+    {% endif %}
+
+    {% if usuario %}
+
+        <h2>Respuesta de la API</h2>
+
+        <p>
+            Operación:
+            {{ operacion|upper }}
+        </p>
+
+        <p>
+            ID:
+            {{ usuario.id }}
+        </p>
+
+        <p>
+            Nombre:
+            {{ usuario.name }}
+        </p>
+
+        <p>
+            Usuario:
+            {{ usuario.username }}
+        </p>
+
+        <p>
+            Email:
+            {{ usuario.email }}
+        </p>
+
+    {% endif %}
+
+</body>
+</html>

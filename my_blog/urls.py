@@ -22,7 +22,7 @@ from drf_yasg.views import get_schema_view
 from api_externa.views import usuarios
 from clima.views import clima
 from posts.api.router import router_post
-from usuarios_api.views import crear_usuario
+from usuarios_api.views import actualizar_usuario, crear_usuario
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -44,4 +44,7 @@ urlpatterns = [
     path("api_externa/usuarios/", usuarios, name="usuarios"),
     path("clima/", clima, name="clima"),
     path("usuarios_api/enviar/", crear_usuario, name="enviar_usuario"),
+    path("actualizar/", actualizar_usuario, name="actualizar_usuario"),
+
+    
 ]
