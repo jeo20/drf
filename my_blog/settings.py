@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "posts",
     "api_externa",
     "clima",
+    "user",
     "usuarios_api"
 ]
 
@@ -123,6 +124,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = './static/'
 
+AUTH_USER_MODEL = "user.User"
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
